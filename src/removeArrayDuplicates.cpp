@@ -14,8 +14,31 @@ NOTES: Don't create new array, try to change the input array.
 */
 
 #include <stdio.h>
+#include<stdlib.h>
 
 int removeArrayDuplicates(int *Arr, int len)
 {	
-	return -1;
+	int i, j, k;
+	if (len <= 0 || Arr == NULL)
+		return -1;
+	else
+	{
+		for (i = 0; i < len; i++)
+		{
+			for (j = i + 1; j < len; j++)
+			{
+				k = j;
+				if (Arr[i] == Arr[j])
+				{
+					while (k <len-1)
+					{
+						Arr[k] = Arr[k + 1];
+						k++;
+					}
+					len--;
+				}
+			}
+		}
+		return len;
+	}
 }
