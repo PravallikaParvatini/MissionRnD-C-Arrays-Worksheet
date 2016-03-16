@@ -13,12 +13,11 @@ ERROR CASES: Return -1 for invalid inputs.
 NOTES: Don't create new array, try to change the input array.
 */
 
-#include <stdio.h>
-#include<stdlib.h>
+#include<stdio.h>
 
 int removeArrayDuplicates(int *Arr, int len)
 {	
-	int i, j, k;
+	int i, j, k,len1,count=0;
 	if (len <= 0 || Arr == NULL)
 		return -1;
 	else
@@ -30,7 +29,7 @@ int removeArrayDuplicates(int *Arr, int len)
 				k = j;
 				if (Arr[i] == Arr[j])
 				{
-					while (k <len-1)
+					while (k < len - 1)
 					{
 						Arr[k] = Arr[k + 1];
 						k++;
